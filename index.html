@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+    <html lang="ca">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/icon.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <title>Restaurant els coberts</title>
+    </head>
+    <body>
+
+        <nav>
+                <!-- Menu principal -->
+                <ul class="navegacio">
+                    <li> <a href="#nosaltres">Nosaltres</a> </li>
+                    <li> <a href="#carta">Carta</a> </li>
+                    <li> <a href="#galeria">Galeria</a> </li>
+                </ul>
+        </nav>
+
+        <header>
+            <!-- Capçalera -->
+            <div class="capçalera">
+                <div class="textoEncima">
+                    <h1>Restaurant <strong>els coberts</strong> </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi adipisci vel reiciendis, voluptate dignissimos enim ab illum inventore consequuntur consequatur, voluptates nemo autem eius molestias iure explicabo cumque quos! Dolorum.</p>
+                </div>
+                <img src="img/headerImg.png" alt="Imatge del header">
+            </div>
+        </header>
+
+        <main>
+            <!-- Nosaltres -->
+            <div id="nosaltres" class="SobreNosaltres">
+                <h2> Sobre nosaltres </h2>
+                <div class="apartat1">
+                    <img src="img/nosaltres1.jpeg" alt="Imatge sobre nosaltres">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi adipisci vel reiciendis, voluptate dignissimos enim ab illum inventore consequuntur consequatur, voluptates nemo autem eius molestias iure explicabo cumque quos! Dolorum.</p>
+                </div>
+                <div class="apartat2">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi adipisci vel reiciendis, voluptate dignissimos enim ab illum inventore consequuntur consequatur, voluptates nemo autem eius molestias iure explicabo cumque quos! Dolorum.</p>
+                    <img src="img/nosaltres2.png" alt="Imatge sobre nosaltres">
+                </div>
+            </div>
+            <!-- carta -->
+            <div id="carta" class="carta">
+                <h2>Carta</h2>
+                    <div class="bloque">
+                        <div class="menu-lateral">Menú 1</div>
+                        <div class="contenido">
+                            <h3>Contingut</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores veritatis assumenda, impedit laboriosam ex, excepturi ut, quo quis magni consectetur voluptate. Nostrum et repellendus hic, error doloremque dicta repudiandae animi!</p>
+
+                            <div class="imagenes">
+                                <div class="img-box">
+                                    <p>Pasta</p>
+                                    <img src="img/menuPasta.png" alt="Foto pasta menu">
+                                </div>
+
+                                <div class="img-box">
+                                    <p>Entrants</p>
+                                    <img src="img/menuEntrantes.png" alt="Foto menu entrantes">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bloque">
+                        <div class="menu-lateral">Menú 2</div>
+
+                        <div class="contenido">
+                            <h3>Contingut</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores veritatis assumenda, impedit laboriosam ex, excepturi ut, quo quis magni consectetur voluptate. Nostrum et repellendus hic, error doloremque dicta repudiandae animi!</p>
+
+                            <div class="imagenes">
+                                <div class="img-box">
+                                    <p>Amanida</p>
+                                    <img src="img/menuEnsalada.png" alt="Foto menu amanida">
+                                </div>
+                                <div class="img-box">
+                                    <p>Peix</p>
+                                    <img src="img/menuPeix.png" alt="Foto menu peix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- Galeria de imatges -->
+            <div id="galeria" class="galeria">
+                <h2>Galeria d'imatges</h2>
+
+                <div class="contenedor-galeria">
+                    <img src="img/galeriaFoto1.png" class="oscura">
+                    <img src="img/galeriaFoto2.png">
+                    <img src="img/galeriaFoto3.png">
+                    <img src="img/galeriaFoto4.png" class="oscura">
+                    <img src="img/galeriaFoto5.png" class="oscura">
+                    <img src="img/galeriaFoto6.png">
+                    <img src="img/galeriaFoto7.png">
+                    <img src="img/galeriaFoto8.png" class="oscura">
+                </div>
+            </div>
+            <form>
+                <h2>Reserva</h2>
+                <div class="form-row">
+                    <div class="form-column">
+                    <label for="nombre">Nom:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                    
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data">
+                    </div>
+
+                    <div class="form-column">
+                    <label for="numPersonas">Número Personas:</label>
+                    <input type="number" id="numPersonas" name="numPersonas" min="1" placeholder="1">
+                    
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora">
+                    </div>
+                </div>
+
+                <div class="descripcion">
+                    <label for="descripcion">Descripció:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escribe aquí la descripción..."></textarea>
+                </div>
+
+                <div class="submit-btn">
+                    <button type="submit">Reservar</button>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <div class="contacto">
+                <div class="gmail">
+                    <span class="material-symbols-outlined">mail</span>
+                    <p>restaurantellcobrets@gmail.com</p>
+                </div>
+                <div class="call">
+                    <span class="material-symbols-outlined">call</span>
+                    <p>628123852</p>
+                </div>
+            </div>
+            <img src="img/logoALT.png" alt="logo">
+        </footer>
+    </body> 
+</html>
