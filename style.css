@@ -351,3 +351,116 @@ footer img{
     height: 40px;    /* Logo */
     width: auto;
 }
+
+@media (max-width: 576px) {
+
+    /* NAV */
+    .navegacio {
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* HEADER */
+    .textoEncima {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* SOBRE NOSALTRES */
+    .SobreNosaltres .apartat1,
+    .SobreNosaltres .apartat2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .SobreNosaltres img {
+        width: 80%;
+    }
+
+    /* CARTA */
+    .bloque {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-lateral {
+        padding: 10px;
+    }
+
+    .imagenes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imagenes img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* GALERIA */
+    .contenedor-galeria img {
+        width: 100%;
+    }
+
+    /* FORMULARIO */
+    .form-row {
+        flex-direction: column;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer img {
+        display: none; /* importante según enunciado */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* SOBRE NOSALTRES */
+    .SobreNosaltres img {
+        width: 40%;
+    }
+
+    /* CARTA */
+    .bloque {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .imagenes {
+        gap: 10%;
+    }
+
+    .imagenes img {
+        width: 180px;
+        height: 120px;
+    }
+
+    /* GALERIA */
+    .contenedor-galeria img {
+        width: 45%;
+    }
+
+    /* FORMULARIO */
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer img {
+        display: none;
+    }
+}
