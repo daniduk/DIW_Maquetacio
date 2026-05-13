@@ -351,3 +351,370 @@ footer img{
     height: 40px;    /* Logo */
     width: auto;
 }
+
+@media (max-width: 576px) {
+
+    /* NAV */
+    .navegacio {
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* HEADER */
+    .textoEncima {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* SOBRE NOSALTRES */
+    .SobreNosaltres .apartat1,
+    .SobreNosaltres .apartat2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .SobreNosaltres img {
+        width: 80%;
+    }
+
+    /* CARTA */
+    .bloque {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-lateral {
+        padding: 10px;
+    }
+
+    .imagenes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imagenes img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* GALERIA */
+    .contenedor-galeria img {
+        width: 100%;
+    }
+
+    /* FORMULARIO */
+    .form-row {
+        flex-direction: column;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer img {
+        display: none; /* importante según enunciado */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* SOBRE NOSALTRES */
+    .SobreNosaltres img {
+        width: 40%;
+    }
+
+    /* CARTA */
+    .bloque {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .imagenes {
+        gap: 10%;
+    }
+
+    .imagenes img {
+        width: 180px;
+        height: 120px;
+    }
+
+    /* GALERIA */
+    .contenedor-galeria img {
+        width: 45%;
+    }
+
+    /* FORMULARIO */
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer img {
+        display: none;
+    }
+}
+
+
+/* ================================================================
+   PRÀCTICA RA4 - TRANSICIONS, ANIMACIONS I VÍDEO
+   Branca: multimedia
+   ================================================================ */
+
+
+/* ================================================================
+   EXERCICI 1.1 - TRANSICIÓ GALERIA (hover amb scale, rotate, grayscale)
+   Ubicació: .contenedor-galeria img
+   S'activa en passar el ratolí per sobre de cada imatge.
+   overflow: hidden al contenedor evita que la imatge
+   es mostri fora de l'àrea de l'element pare.
+   ================================================================ */
+
+/* Afegim overflow: hidden per evitar que la imatge surti fora del contenedor */
+.contenedor-galeria {
+    overflow: hidden;
+}
+
+/* Override de la transició original: afegim rotate i grayscale */
+.contenedor-galeria img {
+    transition: transform 0.5s ease, filter 0.5s ease, border 0.5s ease;
+}
+
+/* Hover: escala la imatge, la gira i aplica escala de grisos */
+.contenedor-galeria img:hover {
+    transform: scale(1.15) rotate(5deg); /* scale + rotate */
+    filter: grayscale(100%);             /* grayscale */
+    border: 3px solid white;
+}
+
+
+/* ================================================================
+   EXERCICI 1.2 - TRANSICIÓ PERSONALITZADA (3 propietats CSS)
+   Ubicació: .navegacio a (enllaços del menú principal)
+   Propietats: color, opacity, text-shadow
+   ================================================================ */
+
+/* Transició de 3 propietats CSS als enllaços del menú */
+.navegacio a {
+    transition: color 0.3s ease, opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover: canvia el color al daurat, redueix opacitat lleugerament i afegeix ombra */
+.navegacio a:hover {
+    text-decoration: underline;
+    color: rgba(222, 184, 135, 1);      /* propietat 1: color */
+    opacity: 0.85;                       /* propietat 2: opacity */
+    text-shadow: 0 0 8px rgba(222, 184, 135, 0.8); /* propietat 3: text-shadow */
+}
+
+
+/* ================================================================
+   EXERCICI 2.1 - ANIMACIÓ CAPÇALERA (únicament CSS, sense Javascript)
+   Ubicació: .textoEncima
+   L'animació fa que al carregar la pàgina el text de la capçalera:
+     - Comenci invisible i baix (opacity 0, translateY positiu)
+     - Vagi apareixent i pujant cap amunt
+     - El color passi de taronja a blanc
+     - S'aturi en la posició final (animation-fill-mode: forwards)
+   ================================================================ */
+
+@keyframes apareixerCapcalera {
+    /* Frame 1: el text no és visible, desplaçat cap avall */
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+        color: orange;
+    }
+    /* Frame 2: el text comença a aparèixer i puja cap amunt */
+    40% {
+        opacity: 0.4;
+        transform: translateY(30px);
+        color: orange;
+    }
+    /* Frame 3: el text continua pujant i agafa un color taronjós */
+    70% {
+        opacity: 0.8;
+        transform: translateY(10px);
+        color: orange;
+    }
+    /* Frame 4: el text es para, és totalment visible i de color blanc */
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        color: white;
+    }
+}
+
+/* Apliquem l'animació al div de la capçalera amb text */
+.textoEncima {
+    /* forwards: es queda en l'estat final un cop acaba l'animació */
+    animation: apareixerCapcalera 2s ease forwards;
+}
+
+
+/* ================================================================
+   EXERCICI 2.2 - ANIMACIÓ AMB 4 FRAMES I 3 PROPIETATS
+   Ubicació: footer img (logo del restaurant)
+   Propietats animades: opacity, transform (rotate), filter (brightness)
+   ================================================================ */
+
+@keyframes animacioLogo {
+    /* Frame 1: logo invisible, girat i fosc */
+    0% {
+        opacity: 0;
+        transform: rotate(-10deg);
+        filter: brightness(0);
+    }
+    /* Frame 2: comença a aparèixer amb lleugera rotació */
+    33% {
+        opacity: 0.5;
+        transform: rotate(5deg);
+        filter: brightness(0.5);
+    }
+    /* Frame 3: quasi visible, es va endreçant */
+    66% {
+        opacity: 0.8;
+        transform: rotate(-3deg);
+        filter: brightness(0.8);
+    }
+    /* Frame 4: totalment visible en la posició final */
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+        filter: brightness(1);
+    }
+}
+
+/* Apliquem l'animació al logo del footer */
+footer img {
+    /* forwards: es queda en l'estat final */
+    animation: animacioLogo 1.5s ease forwards;
+}
+
+
+/* ================================================================
+   EXERCICI 3 i 4 - SECCIÓ VÍDEO
+   Apartat nou després de la galeria.
+   El vídeo és centrat i responsive (no genera scroll horitzontal).
+   Exercici 4: controls personalitzats amb icones dins del vídeo
+   en una capa fosca i transparent.
+   ================================================================ */
+
+/* Estil general de la nova secció de vídeos */
+.s-videos {
+    background-color: rgba(222, 184, 135, 1);
+    border-radius: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    padding: 13px;
+}
+
+.s-videos h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Contenidor del vídeo: centrat i responsive */
+.video-container {
+    position: relative;      /* Necessari per posicionar els controls absoluts */
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;          /* Centrat horitzontal */
+    overflow: hidden;        /* Evita scroll horitzontal */
+    border-radius: 10px;
+}
+
+/* El vídeo ocupa tot l'ample del contenidor (responsive) */
+.video-container video {
+    width: 100%;
+    display: block;          /* Evita espai extra sota del vídeo */
+}
+
+/* Controls personalitzats: capa fosca i transparent sobre el vídeo (Ex 4) */
+.video-controller {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fons fosc transparent */
+    border-radius: 8px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Icones dels controls personalitzats */
+.video-controller .material-symbols-outlined {
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    /* Transició per l'efecte shadow al hover */
+    transition: text-shadow 0.3s ease;
+}
+
+/* Efecte shadow al passar el mouse per sobre de cada icona (Ex 4.3) */
+.video-controller .material-symbols-outlined:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+                 0 0 20px rgba(222, 184, 135, 0.8);
+}
+
+
+/* ================================================================
+   EXERCICI 5 - NAVBAR SHRINK ON SCROLL
+   La classe 'nav-scrolled' s'afegeix/elimina via JS quan es fa scroll.
+   La transició CSS suavitza el canvi de mida de la nav.
+   Referència: https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp
+   ================================================================ */
+
+/* Transició de la nav per suavitzar el canvi en fer scroll */
+nav {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Classe afegida per JS quan l'scroll supera els 50px */
+.nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(222, 184, 135, 0.3);
+}
+
+/* Reduïm el padding de la navegació quan s'ha fet scroll */
+.nav-scrolled .navegacio {
+    padding: 5px 40px 5px 15px;
+    font-size: 0.85em;
+    transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+
+/* ================================================================
+   RESPONSIVE - SECCIÓ VÍDEO (branca multimedia)
+   ================================================================ */
+
+@media (max-width: 768px) {
+    /* El contenidor del vídeo ocupa tot l'ample disponible */
+    .video-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Controls més petits en pantalla mòbil */
+    .video-controller {
+        gap: 5px;
+        padding: 3px 6px;
+    }
+
+    .video-controller .material-symbols-outlined {
+        font-size: 24px;
+    }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="ca">
     <head>
-
+ 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
@@ -10,18 +10,28 @@
         <title>Restaurant els coberts</title>
     </head>
     <body>
-
+ 
+        <!-- =============================================
+             MENÚ PRINCIPAL
+             Ex 5.1: La nav té transició CSS i la classe
+             'nav-scrolled' s'afegeix via JS en fer scroll
+        ============================================= -->
         <nav>
-                <!-- Menu principal -->
                 <ul class="navegacio">
                     <li> <a href="#nosaltres">Nosaltres</a> </li>
                     <li> <a href="#carta">Carta</a> </li>
                     <li> <a href="#galeria">Galeria</a> </li>
                 </ul>
         </nav>
-
+ 
         <header>
-            <!-- Capçalera -->
+            <!-- =============================================
+                 CAPÇALERA
+                 Ex 2.1: El div .textoEncima té una animació
+                 CSS amb @keyframes 'apareixerCapcalera'.
+                 El text apareix pujant cap amunt i el color
+                 passa de taronja a blanc.
+            ============================================= -->
             <div class="capçalera">
                 <div class="textoEncima">
                     <h1>Restaurant <strong>els coberts</strong> </h1>
@@ -30,7 +40,7 @@
                 <img src="img/headerImg.png" alt="Imatge del header">
             </div>
         </header>
-
+ 
         <main>
             <!-- Nosaltres -->
             <div id="nosaltres" class="SobreNosaltres">
@@ -44,6 +54,7 @@
                     <img src="img/nosaltres2.png" alt="Imatge sobre nosaltres">
                 </div>
             </div>
+ 
             <!-- carta -->
             <div id="carta" class="carta">
                 <h2>Carta</h2>
@@ -52,13 +63,13 @@
                         <div class="contenido">
                             <h3>Contingut</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores veritatis assumenda, impedit laboriosam ex, excepturi ut, quo quis magni consectetur voluptate. Nostrum et repellendus hic, error doloremque dicta repudiandae animi!</p>
-
+ 
                             <div class="imagenes">
                                 <div class="img-box">
                                     <p>Pasta</p>
                                     <img src="img/menuPasta.png" alt="Foto pasta menu">
                                 </div>
-
+ 
                                 <div class="img-box">
                                     <p>Entrants</p>
                                     <img src="img/menuEntrantes.png" alt="Foto menu entrantes">
@@ -66,14 +77,14 @@
                             </div>
                         </div>
                     </div>
-
+ 
                     <div class="bloque">
                         <div class="menu-lateral">Menú 2</div>
-
+ 
                         <div class="contenido">
                             <h3>Contingut</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores veritatis assumenda, impedit laboriosam ex, excepturi ut, quo quis magni consectetur voluptate. Nostrum et repellendus hic, error doloremque dicta repudiandae animi!</p>
-
+ 
                             <div class="imagenes">
                                 <div class="img-box">
                                     <p>Amanida</p>
@@ -87,21 +98,63 @@
                         </div>
                     </div>
             </div>
-            <!-- Galeria de imatges -->
+ 
+            <!-- =============================================
+                 GALERIA D'IMATGES
+                 Ex 1.1: Les imatges tenen transició CSS amb
+                 scale, rotate i grayscale activada amb hover.
+                 overflow: hidden al contenedor evita que la
+                 imatge es mostri fora de l'àrea pare.
+            ============================================= -->
             <div id="galeria" class="galeria">
                 <h2>Galeria d'imatges</h2>
-
+ 
                 <div class="contenedor-galeria">
-                    <img src="img/galeriaFoto1.png" class="oscura">
-                    <img src="img/galeriaFoto2.png">
-                    <img src="img/galeriaFoto3.png">
-                    <img src="img/galeriaFoto4.png" class="oscura">
-                    <img src="img/galeriaFoto5.png" class="oscura">
-                    <img src="img/galeriaFoto6.png">
-                    <img src="img/galeriaFoto7.png">
-                    <img src="img/galeriaFoto8.png" class="oscura">
+                    <img src="img/galeriaFoto1.png" class="oscura" alt="Foto galeria1">
+                    <img src="img/galeriaFoto2.png " alt="Foto galeria2">
+                    <img src="img/galeriaFoto3.png" alt="Foto galeria3">
+                    <img src="img/galeriaFoto4.png" class="oscura" alt="Foto galeria4">
+                    <img src="img/galeriaFoto5.png" class="oscura" alt="Foto galeria5">
+                    <img src="img/galeriaFoto6.png" alt="Foto galeria6">
+                    <img src="img/galeriaFoto7.png" alt="Foto galeria7">
+                    <img src="img/galeriaFoto8.png" class="oscura" alt="Foto galeria8">
                 </div>
             </div>
+ 
+            <!-- =============================================
+                 SECCIÓ VÍDEO (Exercicis 3 i 4)
+                 Ex 3: Nou apartat amb vídeo centrat i responsive.
+                 El vídeo per defecte està parat i silenciat (muted).
+                 Ex 4: Controls personalitzats amb icones de
+                 Material Symbols. Sense controls natius.
+                 IMPORTANT: substitueix src/video.mp4 pel
+                 camí al teu fitxer de vídeo.
+            ============================================= -->
+            <section id="videos" class="s-videos">
+                <h3>Vídeos del restaurant</h3>
+                <div class="video-container">
+ 
+                    <!-- Vídeo sense controls natius (Ex 4: els amagarem i fem els nostres) -->
+                    <!-- muted = silenciat per defecte | sense controls = Ex 4 -->
+                    <video id="id-video" muted>
+                        <source src="src/video.mp4" type="video/mp4">
+                        El teu navegador no suporta l'etiqueta de vídeo.
+                    </video>
+ 
+                    <!-- Controls personalitzats: capa fosca i transparent dins del vídeo (Ex 4) -->
+                    <div class="video-controller">
+                        <!-- Icona play: al clicar crida la funció play_video() de JS -->
+                        <span id="btn-play" class="material-symbols-outlined" onclick="play_video()">play_circle</span>
+                        <!-- Icona pause: al clicar crida la funció pause_video() de JS -->
+                        <span id="btn-pause" class="material-symbols-outlined" onclick="pause_video()">pause_circle</span>
+                        <!-- Icona volum: al clicar activa el so amb unmute_video() -->
+                        <span id="btn-volume" class="material-symbols-outlined" onclick="unmute_video()">volume_up</span>
+                        <!-- Icona silenci: al clicar silencia el vídeo amb mute_video() -->
+                        <span id="btn-mute" class="material-symbols-outlined" onclick="mute_video()">volume_off</span>
+                    </div>
+                </div>
+            </section>
+ 
             <form>
                 <h2>Reserva</h2>
                 <div class="form-row">
@@ -112,7 +165,7 @@
                     <label for="data">Data:</label>
                     <input type="date" id="data" name="data">
                     </div>
-
+ 
                     <div class="form-column">
                     <label for="numPersonas">Número Personas:</label>
                     <input type="number" id="numPersonas" name="numPersonas" min="1" placeholder="1">
@@ -121,17 +174,18 @@
                     <input type="time" id="hora" name="hora">
                     </div>
                 </div>
-
+ 
                 <div class="descripcion">
                     <label for="descripcion">Descripció:</label>
                     <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escribe aquí la descripción..."></textarea>
                 </div>
-
+ 
                 <div class="submit-btn">
                     <button type="submit">Reservar</button>
                 </div>
             </form>
         </main>
+ 
         <footer>
             <div class="contacto">
                 <div class="gmail">
@@ -143,7 +197,83 @@
                     <p>628123852</p>
                 </div>
             </div>
+            <!-- Ex 2.2: El logo té una animació d'entrada amb 4 keyframes i 3 propietats -->
             <img src="img/logoALT.png" alt="logo">
         </footer>
+ 
+        <!-- =============================================
+             JAVASCRIPT (Exercicis 4 i 5)
+             S'aconsella tenir el script al final del body.
+        ============================================= -->
+        <script>
+ 
+            // =============================================
+            // EXERCICI 4 - Controls personalitzats del vídeo
+            // Referència apunts: DOM + getElementById
+            // =============================================
+ 
+            /* Seleccionem el vídeo per l'id definit a l'HTML */
+            var video = document.getElementById("id-video");
+ 
+            /* Funció per reproduir el vídeo (botó play_circle) */
+            function play_video() {
+                video.play();
+            }
+ 
+            /* Funció per pausar el vídeo (botó pause_circle) */
+            function pause_video() {
+                video.pause();
+            }
+ 
+            /* Funció per activar el so del vídeo (botó volume_up) */
+            function unmute_video() {
+                video.muted = false;
+            }
+ 
+            /* Funció per silenciar el vídeo (botó volume_off) */
+            function mute_video() {
+                video.muted = true;
+            }
+ 
+ 
+            // =============================================
+            // EXERCICI 5.1 - Navbar shrink on scroll
+            // Referència: https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp
+            // Referència apunts: window.onscroll, classList
+            // =============================================
+ 
+            /* Cada vegada que es mou l'scroll s'invoca scrollFunction */
+            window.onscroll = function() { scrollFunction() };
+ 
+            function scrollFunction() {
+ 
+                var nav = document.querySelector('nav');
+ 
+                /* Si l'scroll supera els 50px s'afegeix la classe nav-scrolled
+                   que redueix la mida de la nav via CSS amb transició */
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    nav.classList.remove('nav-scrolled');
+                }
+ 
+                // -----------------------------------------
+                // EXERCICI 5.2 - Autoplay vídeo amb scroll
+                // Quan l'scroll arriba a la secció del vídeo
+                // el vídeo es reprodueix automàticament
+                // -----------------------------------------
+ 
+                var videoEl = document.getElementById("id-video");
+                /* getBoundingClientRect retorna la posició de l'element respecte la finestra */
+                var rect = videoEl.getBoundingClientRect();
+ 
+                /* Si el vídeo és visible a la pantalla, reproduir-lo */
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    videoEl.play();
+                }
+            }
+ 
+        </script>
+ 
     </body> 
 </html>
